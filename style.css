@@ -192,9 +192,9 @@ td,th {
 
     .cell, td, th {
         /* This ensures cells stay square and scale with screen width */
-        width: 8vw !important; 
-        height: 8vw !important;
-        font-size: 4vw !important; /* Scale text with cell size */
+        width: 2vw !important; 
+        height: 2vw !important;
+        font-size: 1vw !important; /* Scale text with cell size */
     }
 
     #player, #points {
