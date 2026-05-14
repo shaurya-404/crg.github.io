@@ -150,17 +150,17 @@ td,th {
         margin-bottom: 10px;
     }
     .cell {
-    width: 10vh;
-    height: 10vh;
+    width: 5vh;
+    height: 5vh;
     border: 1px solid rgb(31, 81, 255);
     cursor: pointer;
-    font: 7vh;
+    font-size: 3vh;
     transition: background-color 0.2s;
     }
     td,th {
     border: 1px solid rgb(31 81 255);
-    width: 10vh;
-    height: 10vh;
+    width: 5vh;
+    height: 5vh;
     text-align: center;
     }
     caption {
