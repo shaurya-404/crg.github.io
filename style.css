@@ -144,7 +144,7 @@ td,th {
     }   
 }
 
-@media (max-width: 1500px) and (orientation: portrait) {
+/* @media (max-width: 1500px) and (orientation: portrait) {
     .infobar {
         font-size: 1rem;
         margin-bottom: 10px;
@@ -175,4 +175,30 @@ td,th {
     color: #0026ff;
     font-size: 1.5rem;
     } 
+} */
+
+@media (max-width: 1500px) and (orientation: portrait) {
+    .infobar {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    /* Force the table to take up available space */
+    table {
+        width: 95vw; 
+        max-width: 95vw;
+        table-layout: fixed; /* This is crucial for forcing cell sizes */
+    }
+
+    .cell, td, th {
+        /* This ensures cells stay square and scale with screen width */
+        width: 8vw !important; 
+        height: 8vw !important;
+        font-size: 4vw !important; /* Scale text with cell size */
+    }
+
+    #player, #points {
+        min-width: 80%;
+        font-size: 1.5rem;
+    }
 }
