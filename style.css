@@ -150,8 +150,8 @@ td,th {
         margin-bottom: 10px;
     }
     .cell {
-    width: 5vh;
-    height: 5vh;
+    width: 4rem;
+    height: 4rem;
     border: 1px solid rgb(31, 81, 255);
     cursor: pointer;
     font-size: 3vh;
@@ -159,8 +159,8 @@ td,th {
     }
     td,th {
     border: 1px solid rgb(31 81 255);
-    width: 5vh;
-    height: 5vh;
+    width: 4rem;
+    height: 4rem;
     text-align: center;
     }
     caption {
