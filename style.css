@@ -146,21 +146,21 @@ td,th {
 
 @media (max-width: 1440px) and (orientation: portrait) {
     .infobar {
-        font-size: 3.5rem;
+        font-size: 1.5rem;
         margin-bottom: 20px;
     }
     .cell {
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     border: 1px solid rgb(31, 81, 255);
     cursor: pointer;
-    font: 6rem;
+    font: 5rem;
     transition: background-color 0.2s;
     }
     td,th {
     border: 1px solid rgb(31 81 255);
-    width: 4rem;
-    height: 4rem;
+    width: 6rem;
+    height: 6rem;
     text-align: center;
     }
     caption {
