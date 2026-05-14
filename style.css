@@ -144,23 +144,23 @@ td,th {
     }   
 }
 
-/* @media (max-width: 16000px) and (orientation: portrait) {
+@media (max-width: 16000px) and (orientation: portrait) {
     .infobar {
         font-size: 1rem;
         margin-bottom: 10px;
     }
     .cell {
-    width: 8rem;
-    height: 8rem;
+    width: 10vh;
+    height: 10vh;
     border: 1px solid rgb(31, 81, 255);
     cursor: pointer;
-    font: 5rem;
+    font: 7vh;
     transition: background-color 0.2s;
     }
     td,th {
     border: 1px solid rgb(31 81 255);
-    width: 8rem;
-    height: 8rem;
+    width: 10vh;
+    height: 10vh;
     text-align: center;
     }
     caption {
@@ -175,4 +175,4 @@ td,th {
     color: #0026ff;
     font-size: 1.5rem;
     } 
-} */
+}
