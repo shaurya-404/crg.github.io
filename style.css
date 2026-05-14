@@ -144,7 +144,7 @@ td,th {
     }   
 }
 
-@media (max-width: 16000px) and (orientation: portrait) {
+/* @media (max-width: 16000px) and (orientation: portrait) {
     .infobar {
         font-size: 1rem;
         margin-bottom: 10px;
@@ -175,4 +175,4 @@ td,th {
     color: #0026ff;
     font-size: 1.5rem;
     } 
-}
+} */
