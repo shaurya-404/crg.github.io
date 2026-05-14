@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>Chain Reaction Game</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body >
+    <div class="infobar">
+        <div id="gTimer">Game: <span id="gtimer">5:00</span> mins</div>
+        <div id="tTimer">Turn Time: <span id="ttimer">15</span>s</div>
+        <div id="score">P1: 0 | P2: 0</div>
+        <div id="PlayerTurn">Player 1's Turn</div>
+        <button id="pause">pause</button>
+    </div>
+    <div class="win">
+        <div id="player"></div>
+        <div id="points"></div>
+    </div>
+    <div class="gamegrid">
+        <table>
+            <caption>
+                Chain Reaction Game
+            </caption>
+            <thead>
+                <tr>
+                <th scope="col"> </th>
+                <th scope="col">1</th>
+                <th scope="col">2</th>
+                <th scope="col">3</th>
+                <th scope="col">4</th>
+                <th scope="col">5</th>
+                <th scope="col">6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td class="cell" data-row="1" data-col="1"></td>
+                <td class="cell" data-row="1" data-col="2"></td>
+                <td class="cell" data-row="1" data-col="3"></td>
+                <td class="cell" data-row="1" data-col="4"></td>
+                <td class="cell" data-row="1" data-col="5"></td>
+                <td class="cell" data-row="1" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td class="cell" data-row="2" data-col="1"></td>
+                <td class="cell" data-row="2" data-col="2"></td>
+                <td class="cell" data-row="2" data-col="3"></td>
+                <td class="cell" data-row="2" data-col="4"></td>
+                <td class="cell" data-row="2" data-col="5"></td>
+                <td class="cell" data-row="2" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td class="cell" data-row="3" data-col="1"></td>
+                <td class="cell" data-row="3" data-col="2"></td>
+                <td class="cell" data-row="3" data-col="3"></td>
+                <td class="cell" data-row="3" data-col="4"></td>
+                <td class="cell" data-row="3" data-col="5"></td>
+                <td class="cell" data-row="3" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">4</th>
+                <td class="cell" data-row="4" data-col="1"></td>
+                <td class="cell" data-row="4" data-col="2"></td>
+                <td class="cell" data-row="4" data-col="3"></td>
+                <td class="cell" data-row="4" data-col="4"></td>
+                <td class="cell" data-row="4" data-col="5"></td>
+                <td class="cell" data-row="4" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">5</th>
+                <td class="cell" data-row="5" data-col="1"></td>
+                <td class="cell" data-row="5" data-col="2"></td>
+                <td class="cell" data-row="5" data-col="3"></td>
+                <td class="cell" data-row="5" data-col="4"></td>
+                <td class="cell" data-row="5" data-col="5"></td>
+                <td class="cell" data-row="5" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">6</th>
+                <td class="cell" data-row="6" data-col="1"></td>
+                <td class="cell" data-row="6" data-col="2"></td>
+                <td class="cell" data-row="6" data-col="3"></td>
+                <td class="cell" data-row="6" data-col="4"></td>
+                <td class="cell" data-row="6" data-col="5"></td>
+                <td class="cell" data-row="6" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">7</th>
+                <td class="cell" data-row="7" data-col="1"></td>
+                <td class="cell" data-row="7" data-col="2"></td>
+                <td class="cell" data-row="7" data-col="3"></td>
+                <td class="cell" data-row="7" data-col="4"></td>
+                <td class="cell" data-row="7" data-col="5"></td>
+                <td class="cell" data-row="7" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">8</th>
+                <td class="cell" data-row="8" data-col="1"></td>
+                <td class="cell" data-row="8" data-col="2"></td>
+                <td class="cell" data-row="8" data-col="3"></td>
+                <td class="cell" data-row="8" data-col="4"></td>
+                <td class="cell" data-row="8" data-col="5"></td>
+                <td class="cell" data-row="8" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">9</th>
+                <td class="cell" data-row="9" data-col="1"></td>
+                <td class="cell" data-row="9" data-col="2"></td>
+                <td class="cell" data-row="9" data-col="3"></td>
+                <td class="cell" data-row="9" data-col="4"></td>
+                <td class="cell" data-row="9" data-col="5"></td>
+                <td class="cell" data-row="9" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">10</th>
+                <td class="cell" data-row="10" data-col="1"></td>
+                <td class="cell" data-row="10" data-col="2"></td>
+                <td class="cell" data-row="10" data-col="3"></td>
+                <td class="cell" data-row="10" data-col="4"></td>
+                <td class="cell" data-row="10" data-col="5"></td>
+                <td class="cell" data-row="10" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">11</th>
+                <td class="cell" data-row="11" data-col="1"></td>
+                <td class="cell" data-row="11" data-col="2"></td>
+                <td class="cell" data-row="11" data-col="3"></td>
+                <td class="cell" data-row="11" data-col="4"></td>
+                <td class="cell" data-row="11" data-col="5"></td>
+                <td class="cell" data-row="11" data-col="6"></td>
+                </tr>
+                <tr>
+                <th scope="row">12</th>
+                <td class="cell" data-row="12" data-col="1"></td>
+                <td class="cell" data-row="12" data-col="2"></td>
+                <td class="cell" data-row="12" data-col="3"></td>
+                <td class="cell" data-row="12" data-col="4"></td>
+                <td class="cell" data-row="12" data-col="5"></td>
+                <td class="cell" data-row="12" data-col="6"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
