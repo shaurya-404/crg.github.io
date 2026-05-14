@@ -147,7 +147,7 @@ td,th {
 @media (max-width: 1440px) and (orientation: portrait) {
     .infobar {
         font-size: 1rem;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
     .cell {
     width: 8rem;
