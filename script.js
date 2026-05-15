@@ -179,26 +179,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     function checkWin(){
 
-        let p1cl = 0;
+        let p1cl=0;
         let p2cl=0;
 
-        for(let i=1;i<13;i++){
-            for(let j=1;j<7;j++){
-                celln = getCell(i,j);
-                if(celln.style.color === p1color){
-                    p1cl=1;
-                }
-                else if(celln.style.color === p2color){
-                    p2cl=1;
+        if(p1S+p2S>=2){    
+            for(let i=1;i<13;i++){
+                for(let j=1;j<7;j++){
+                    celln = getCell(i,j);
+                    if(celln.style.color === p1color){
+                        p1cl=1;
+                    }
+                    else if(celln.style.color === p2color){
+                        p2cl=1;
+                    }
                 }
             }
-        }
 
-        if(p1cl===0){
-            return "P2 won";
-        }
-        else if(p2cl===0){
-            return "P1 won";
+            if(p1cl===0){
+                return "P2 won";
+            }
+            else if(p2cl===0){
+                return "P1 won";
+            }
         }
     }
 
@@ -346,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     });
-    checkWin();
     resetttimer();
 
 });
