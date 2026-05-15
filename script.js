@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const cells = document.querySelectorAll('.cell');
     const Movecounter = document.getElementById('moves');
 
+    document.getElementById("ins1i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.";
+    document.getElementById("ins2i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.";
+
     const paubtn = document.getElementById('pause');
 
     paubtn.addEventListener('click', () => {
@@ -179,7 +182,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let p1cl = 0;
         let p2cl=0;
 
-        if(p1S+p2S > 2){
         for(let i=1;i<13;i++){
             for(let j=1;j<7;j++){
                 celln = getCell(i,j);
@@ -197,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         else if(p2cl===0){
             return "P1 won";
-        }}
+        }
     }
 
     function capaci(ro1,co1){
@@ -344,7 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         });
     });
-
+    checkWin();
     resetttimer();
 
 });
