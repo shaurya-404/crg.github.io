@@ -7,8 +7,11 @@ let p2S = 0;
 let c = 0;
 let pause=false;
 let history = "";
+const portal=[];
 const p1color = "rgb(255, 231, 49)";
 const p2color = "rgb(17, 255, 0)";
+const exp = new Audio("exp.mp3")
+const click = new Audio("click.mp3")
 
 let gameInterval;
 let turnInterval;
@@ -166,7 +169,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         getCell(ro,co).innerText="";
         getCell(ro,co).style.color="";
+        checkWin();
         gc--;
+        exp.currentTime=0;
+        exp.play();
     }
     function checkWin(){
 
@@ -207,9 +213,69 @@ document.addEventListener('DOMContentLoaded', () => {
         return capacity;
     }
 
+    function teleportset(){
+
+        for(i=0;i<3;i++){
+            let c1 = Math.floor(Math.random() * 6) + 1;
+            let r1 = Math.floor(Math.random() * 12) + 1;
+            let l;
+            console.log(`${r1},${c1}`);
+            if(r1!==c1){
+                getCell(r1,c1).style.backgroundColor="#ff0000";
+                try{        
+                    if(r1>6){
+                        getCell(c1,r1-6).style.backgroundColor="#ff00ee";
+                        l = [[r1,c1],[c1,r1-6]];
+                    }
+                    else if(r1<=6){
+                        getCell(c1,r1).style.backgroundColor="#ff00ee";
+                        l = [[r1,c1],[c1,r1]];
+                    }
+                    portal.push(l);
+                }
+                catch{
+                    getCell(r1,c1).style.backgroundColor="";
+                }
+            }
+            console.log(portal);
+        }
+    }
+    teleportset();
+
+    function teleportation(){
+        for(let i=0;i<3;i++){
+            t1cell=getCell(portal[i][0][0],portal[i][0][1]);
+            t2cell=getCell(portal[i][1][0],portal[i][1][1]);
+
+            if (t1cell.innerText !== "" && t2cell.innerText ===""){
+                t2cell.innerText = t1cell.innerText;
+                t1cell.innerText = "";
+                t2cell.style.color= CP === 2 ? "#ffe731" : "#11ff00";
+            }
+            else if((t1cell.innerText !== "" && t2cell.innerText !="")){
+                capi = capaci(portal[i][1][0],portal[i][1][1]);
+                if(t2cell.innerText.length < capi){
+                    t2cell.innerText += "●";
+                    t1cell.innerText = "";
+                    t2cell.style.color= ((CP === 2) ? "#ffe731" : "#11ff00");
+                }
+                else{
+                    colo= CP === 2 ? "#ffe731" : "#11ff00";
+                    explosion(portal[i][1][0],portal[i][1][1],colo);
+                    t2cell.innerText="";
+                }
+
+            }
+        }
+        checkWin();
+
+    }
+
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
             if (pause) return;
+            click.currentTime=0;
+            click.play();
 
             row = cell.dataset.row;
             col = cell.dataset.col;
@@ -255,6 +321,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Movecounter.innerText=history;  
                 switchplayer();
             }
+            teleportation();
 
             
             let win = checkWin();
