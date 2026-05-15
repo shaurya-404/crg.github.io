@@ -112,7 +112,7 @@ td,th {
 
 .records {
     height: 10rem;
-    width: 17rem;
+    width: 15rem;
 }
 #title{
     font-size: 2.5rem;
@@ -204,16 +204,18 @@ td,th {
         padding: 10px;
     }
 
+    /* Force the table to take up available space */
     table {
         width: 95vw; 
         max-width: 95vw;
-        table-layout: fixed;
+        table-layout: fixed; /* This is crucial for forcing cell sizes */
     }
 
     .cell, td, th {
-        width: 2rem !important; 
-        height: 5rem !important;
-        font-size: 1vw !important; 
+        /* This ensures cells stay square and scale with screen width */
+        width: 2vw !important; 
+        height: 2vw !important;
+        font-size: 1vw !important; /* Scale text with cell size */
     }
 
     #player, #points {
