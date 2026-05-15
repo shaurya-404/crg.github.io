@@ -178,7 +178,7 @@ td,th {
     .cell, td, th {
         width: 10vw !important; 
         height: 10vw !important;
-        font-size: 5vw !important;
+        font-size: 8vw !important;
     }
 
     #player, #points {
@@ -204,5 +204,6 @@ td,th {
     .tolevel{
         flex-direction: column-reverse;
         align-items: center;
+        padding: 1rem;
     }
 }
