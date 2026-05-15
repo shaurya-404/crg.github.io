@@ -222,27 +222,24 @@ td,th {
         min-width: 80%;
         font-size: 1.5rem;
     }
-    .records {
-        display: none;
-    }
-    .records2 {
+    .records{
         
         height: 5rem;
         width: 7rem;
         place-items: center;
     }
-    #title2{
+    #title{
         font-size: 1rem;
         align-items: center;
         color: purple;
     }
-    #moves2{
+    #moves{
         font-size: 0.5rem;
         align-items: center;
         color: greenyellow;
     }
     .tolevel{
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: center;
     }
 }
