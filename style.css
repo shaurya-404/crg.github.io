@@ -110,6 +110,26 @@ td,th {
     color: #0026ff;
 }
 
+.records {
+    height: 10rem;
+    width: 17rem;
+    place-items: center;
+}
+#title{
+    font-size: 2.5rem;
+    align-items: center;
+    text-align: center;
+    color: purple;
+}
+#moves{
+    font-size: 1.5rem;
+    align-items: center;
+    color: greenyellow;
+}
+.tolevel{
+    display: flex;
+}
+
 
 @media (min-width: 1920px) and (orientation: landscape) {
     .infobar {
@@ -201,4 +221,211 @@ td,th {
         min-width: 80%;
         font-size: 1.5rem;
     }
+    .records {
+        
+        height: 10rem;
+        width: 17rem;
+        place-items: center;
+    }
+    #title{
+        font-size: 2.5rem;
+        align-items: center;
+        color: purple;
+    }
+    #moves{
+        font-size: 1.5rem;
+        align-items: center;
+        color: greenyellow;
+    }
+    .tolevel{
+        flex-direction: column;
+        align-items: center;
+    }
 }
+
+
+
+
+
+
+
+
+
+/* body {
+    background-color: black;
+    color: white; 
+}
+
+.infobar {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-around;
+    align-items: center;
+    color: #0026ff;
+    border-bottom: 2px solid rgb(31, 81, 255);
+    margin-bottom: 20px;
+}
+
+#PlayerTurn {
+    color: #ffe731;
+}
+
+#gTimer {
+    font-weight: bold;
+    color: #ff0000;
+}
+#tTimer {
+    font-weight: bold;
+    color: #ff0000; 
+}
+
+.gamegrid {
+    display: flex;
+    justify-content: center;   
+    align-items: center;       
+    width: 100%;               
+    min-height: 70vh;          
+    margin: 0 auto;            
+}
+
+
+table {
+    border: 2px solid rgb(31 81 255);
+    border-collapse: collapse;
+    
+}
+
+td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    
+}
+
+.cell {
+    width: 45px;
+    height: 45px;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.cell:hover {
+    background-color: rgba(0, 55, 255, 0.2);
+}
+
+
+
+.win {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: none; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#player {
+    background-color: #222;
+    padding: 20px 40px 10px 40px;
+    border: 3px solid #ea00ff;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    font-size: 40px;
+    font-weight: bold;
+    min-width: 300px;
+    text-align: center;
+}
+
+#points {
+    background-color: #222;
+    padding: 10px 40px 20px 40px;
+    border: 3px solid #ea00ff;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    font-size: 24px;
+    min-width: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#pause {
+    background-color: #00ff2f;
+    height: 20px;
+    width: 75px;
+    color: #0026ff;
+}
+
+
+@media (min-width: 1920px) and (orientation: landscape) {
+    .infobar {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    .cell {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font: 6rem;
+    transition: background-color 0.2s;
+    }
+    td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    }
+    caption {
+    font-size: 2.5rem;
+    padding: 10px;    
+    font-weight: bold;
+    }
+    #pause {
+    background-color: #00ff2f;
+    height: 2.5rem;
+    width: 7rem;
+    color: #0026ff;
+    font-size: 1.5rem;
+    }   
+}
+
+@media (max-width: 1440px) and (orientation: portrait) {
+    .infobar {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+    .cell {
+    width: 4rem;
+    height: 4rem;
+    border: 1px solid rgb(31, 81, 255);
+    cursor: pointer;
+    font-size: 6rem;
+    transition: background-color 0.2s;
+    }
+    td,th {
+    border: 1px solid rgb(31 81 255);
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    }
+    caption {
+    font-size: 2.5rem;
+    padding: 10px;    
+    font-weight: bold;
+  }
+  #pause {
+    background-color: #00ff2f;
+    height: 2.5rem;
+    width: 7rem;
+    color: #0026ff;
+    font-size: 1.5rem;
+    } 
+} */

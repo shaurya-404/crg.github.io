@@ -6,6 +6,7 @@ let gc= 0;
 let p2S = 0;
 let c = 0;
 let pause=false;
+let history = "";
 const p1color = "rgb(255, 231, 49)";
 const p2color = "rgb(17, 255, 0)";
 
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const playertxt = document.getElementById('PlayerTurn');
     const scoretxt = document.getElementById('score');
     const cells = document.querySelectorAll('.cell');
+    const Movecounter = document.getElementById('moves');
 
     const paubtn = document.getElementById('pause');
 
@@ -207,12 +209,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cells.forEach(cell => {
         cell.addEventListener('click', () => {
-
             if (pause) return;
 
             row = cell.dataset.row;
             col = cell.dataset.col;
             let capacity=0;
+
 
             capacity = capaci(row,col);
             let cellco=cell.style.color;
@@ -224,6 +226,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (CP === 1) p1S++; else p2S++;
                 scoretxt.innerText = `P1: ${p1S} | P2: ${p2S}`;
                 c++;
+                history=history+`player-${CP} did r:${row} c:${col}\n`
+                Movecounter.innerText=history;
                 switchplayer();
             }
             else if(!(cell.innerText === "") && (c==0||c==1)){
@@ -247,6 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     scoretxt.innerText = `P1: ${p1S} | P2: ${p2S}`;
                     explosion(row,col,cellco);
                 }
+                history=history+`player-${CP} did r:${row} c:${col}\n`
+                Movecounter.innerText=history;  
                 switchplayer();
             }
 
