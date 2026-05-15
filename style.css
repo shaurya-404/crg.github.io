@@ -213,8 +213,8 @@ td,th {
 
     .cell, td, th {
         /* This ensures cells stay square and scale with screen width */
-        width: 2vw !important; 
-        height: 2vw !important;
+        width: 2rem !important; 
+        height: 5vw !important;
         font-size: 1vw !important; /* Scale text with cell size */
     }
 
@@ -235,7 +235,6 @@ td,th {
     }
     #moves{
         font-size: 0.5rem;
-        align-items: center;
         color: greenyellow;
     }
     .tolevel{
