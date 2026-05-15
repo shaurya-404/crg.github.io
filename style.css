@@ -221,19 +221,22 @@ td,th {
         min-width: 80%;
         font-size: 1.5rem;
     }
-    .records {
+    .records2 {
+        display: none;
+    }
+    .records2 {
         
-        height: 10rem;
-        width: 17rem;
+        height: 5rem;
+        width: 7rem;
         place-items: center;
     }
-    #title{
-        font-size: 2.5rem;
+    #title2{
+        font-size: 1rem;
         align-items: center;
         color: purple;
     }
-    #moves{
-        font-size: 1.5rem;
+    #moves2{
+        font-size: 0.5rem;
         align-items: center;
         color: greenyellow;
     }
