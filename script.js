@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cells = document.querySelectorAll('.cell');
     const Movecounter = document.getElementById('moves');
 
-    document.getElementById("ins1i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.";
-    document.getElementById("ins2i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.";
+    document.getElementById("ins1i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.\n\n Tip: avoid placing in portal boxes! specially during start.";
+    document.getElementById("ins2i").innerText = "If any star is placed in red boxes it will get teleported to a pink box.\nRed boxes cant have stars.\n\n Tip: avoid placing in portal boxes! specially during start.";
 
     const paubtn = document.getElementById('pause');
 
@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         getCell(ro,co).innerText="";
         getCell(ro,co).style.color="";
-        checkWin();
         gc--;
         exp.currentTime=0;
         exp.play();
@@ -228,11 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 getCell(r1,c1).style.backgroundColor="#ff0000";
                 try{        
                     if(r1>6){
-                        getCell(c1,r1-6).style.backgroundColor="#ff00ee";
+                        getCell(c1,r1-6).style.backgroundColor="#66bebb";
                         l = [[r1,c1],[c1,r1-6]];
                     }
                     else if(r1<=6){
-                        getCell(c1,r1).style.backgroundColor="#ff00ee";
+                        getCell(c1,r1).style.backgroundColor="#66bebb";
                         l = [[r1,c1],[c1,r1]];
                     }
                     portal.push(l);
@@ -251,10 +250,22 @@ document.addEventListener('DOMContentLoaded', () => {
             t1cell=getCell(portal[i][0][0],portal[i][0][1]);
             t2cell=getCell(portal[i][1][0],portal[i][1][1]);
 
+            // if((t2cell.innerText!=="") && (t2cell.style.color === ((CP == 1) ? p1color : p2color))){
+            //     alert("Space occupied");
+            //     t1cell.innerText="";
+            //     switchplayer();
+            //     c--;
+            //     history = history.trimEnd() + "(Invalid)\n";
+            //     return;
+            // }
+
             if (t1cell.innerText !== "" && t2cell.innerText ===""){
                 t2cell.innerText = t1cell.innerText;
                 t1cell.innerText = "";
                 t2cell.style.color= CP === 2 ? "#ffe731" : "#11ff00";
+            }
+            else if(t2cell.innerText !== "" && t2cell.style.color === ((CP === 2) ? "#ffe731" : "#11ff00") ){
+                alert("Portal space already taken try somewhere else.")
             }
             else if((t1cell.innerText !== "" && t2cell.innerText !="")){
                 capi = capaci(portal[i][1][0],portal[i][1][1]);
@@ -271,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             }
         }
-        checkWin();
 
     }
 
@@ -288,7 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             capacity = capaci(row,col);
             let cellco=cell.style.color;
-            if (cell.innerText === "" && (c==0||c==1)) {
+
+            if (cell.style.backgroundColor === "rgb(255, 0, 0)"){
+                alert("You cannot place in portals.");
+            }
+            else if (cell.innerText === "" && (c==0||c==1)) {
     
                 for(let i=0;i<capacity;i++){cell.innerText += "●"}; 
                 cell.style.color = CP === 1 ? "#ffe731" : "#11ff00";
@@ -311,6 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else if(!(cell.innerText === "") && (cellco === ((CP == 2) ? p1color : p2color))){
                 alert("Space taken by other player.")
             }
+            
 
             else if (!(cell.innerText === "") && !(c==0||c==1)) {
                 if((cell.innerText).length<capacity){
@@ -325,6 +340,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Movecounter.innerText=history;  
                 switchplayer();
             }
+            
             teleportation();
 
             
