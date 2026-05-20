@@ -316,7 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             else if(!(cell.innerText === "") && (c==0||c==1)){
                 alert("The cell is already filled try somewhere else.");
-                c++;
+                if(c!=1){
+                    c++;}
             }
             else if((cell.innerText === "") && !(c==0||c==1)){
                 alert("The cell is empty you cant place atom over there anymore.");
